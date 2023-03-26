@@ -24,8 +24,7 @@ uploaded_file = st.file_uploader("Carga un archivo PDF", type=['pdf'])
 if uploaded_file is not None:
     with st.spinner('Extrayendo texto del PDF...'):
         text = extract_text_from_pdf(BytesIO(uploaded_file.read()))
-    st.subheader("Texto extraído del PDF:")
-    st.write(text)
+ 
 
     user_question = st.text_input("Escribe tu pregunta sobre el contenido del PDF:")
     if user_question:
